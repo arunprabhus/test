@@ -1,0 +1,31 @@
+<nav class="nav-extended">
+    <div class="nav-wrapper">
+        <a class="brand-logo">{{title}}</a>
+        <a data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a>Profile</a></li>
+            <li><a>Link1</a></li>
+            <li><a>Link2</a></li>
+            <li><a>Link3</a></li>
+        </ul>
+    </div>
+</nav>
+
+<ul class="sidenav" id="mobile-demo">
+    <li><a>Profile</a></li>
+    <li><a>Link1</a></li>
+    <li><a>Link2</a></li>
+    <li><a>Link3</a></li>
+</ul>
+
+<div>
+    <div style="padding:10px;"><a routerLink="/dashboard" class="waves-effect waves-light btn"><i class="material-icons left">dashboard</i>Box View</a>
+        <a routerLink="/heroes" class="waves-effect waves-light btn"><i class="material-icons left">dehaze</i>Tabular View</a>
+
+    </div>
+    <div style="padding:0 10px;">
+        <router-outlet>
+        </router-outlet>
+    </div>
+</div>
+<!--app-messages></app-messages -->

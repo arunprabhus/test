@@ -1,0 +1,20 @@
+<p-table [value]="heroes" scrollHeight="550px" [paginator]="true" [rows]="10">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Address</th>
+            <th>Country</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-hero>
+        <tr>
+            <td>{{hero.id}}</td>
+            <td>{{hero.firstName}}</td>
+            <td>{{hero.lastName}}</td>
+            <td>{{hero.country}}</td>
+            <td>{{hero.address}}</td>
+        </tr>
+    </ng-template>
+</p-table>

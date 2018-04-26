@@ -1,0 +1,74 @@
+<!-- <div class="grid grid-pad">
+    <a *ngFor="let hero of heroes" class="col-1-4" routerLink="/detail/{{hero.id}}">
+        <div class="module hero">
+            <h4>{{hero.lastName}}</h4>
+        </div>
+    </a>
+</div> -->
+
+<p-dataView #dv [value]="heroes" [paginator]="true" [rows]="10" paginatorPosition="both" filterBy="country" [sortField]="sortField" [sortOrder]="sortOrder">
+    <p-header>
+        <div class="ui-helper-clearfix">
+            <div class="ui-g">
+                <div class="ui-g-12 ui-md-4">
+                    <p-dropdown [options]="sortOptions" [(ngModel)]="sortKey" placeholder="Sort By" (onChange)="onSortChange($event)" [autoWidth]="false" [style]="{'min-width':'15em'}"></p-dropdown>
+                </div>
+                <div class="ui-g-6 ui-md-4 filter-container">
+
+                    <input type="search" pInputText placeholder="Search by country" (keyup)="dv.filter($event.target.value)">
+
+                </div>
+                <div class="ui-g-6 ui-md-4" style="text-align:right">
+                    <p-dataViewLayoutOptions></p-dataViewLayoutOptions>
+                </div>
+            </div>
+        </div>
+    </p-header>
+
+    <ng-template let-hero pTemplate="gridItem">
+        <div class="col s12 m4 offset-m2 l6 offset-l3">
+            <div class="card-panel grey lighten-5 z-depth-1">
+                <div class="row valign-wrapper">
+                    <div class="col s2">
+                        <img src="./assets/yuna.jpg" alt="" class="circle responsive-img">
+                        <!-- notice the "circle" class -->
+                    </div>
+                    <div class="col s10">
+                        <h4>{{hero.firstName}} {{hero.lastName}}</h4>
+                        <h5>{{hero.country}}</h5>
+                        <p>{{hero.address}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--div style="padding:.5em" class="ui-g-12 ui-md-3">
+            <p-panel [header]="hero.firstName" [style]="{'text-align':'center'}">
+
+                <div class="hero-detail">{{hero.lastName}} - {{hero.address}}</div>
+
+
+            </p-panel>
+        </div>-->
+    </ng-template>
+    <ng-template let-hero pTemplate="listItem">
+
+
+        <div class="ui-g-12 ui-md-8 hero-details">
+            <div class="ui-g">
+                <div class="ui-g-2 ui-sm-6">First Name: </div>
+                <div class="ui-g-10 ui-sm-6"><b>{{hero.firstName}}</b></div>
+
+                <div class="ui-g-2 ui-sm-6">Last Name: </div>
+                <div class="ui-g-10 ui-sm-6"><b>{{hero.lastName}}</b></div>
+
+                <div class="ui-g-2 ui-sm-6">Country: </div>
+                <div class="ui-g-10 ui-sm-6"><b>{{hero.country}}</b></div>
+
+                <div class="ui-g-2 ui-sm-6">Address: </div>
+                <div class="ui-g-10 ui-sm-6"><b>{{hero.address}}</b></div>
+            </div>
+        </div>
+
+    </ng-template>
+</p-dataView>

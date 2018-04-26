@@ -1,0 +1,30 @@
+nav {
+    color: #fff;
+    background-color: darkslateblue;
+}
+
+.card-panel {
+    padding: 10px;
+    margin: 10px 10px 0 0;
+    width: 23em;
+}
+
+h4 {
+    font-size: 16px;
+    padding: 0;
+    margin: 0 0 5px 0;
+    font-weight: bold;
+}
+
+h5 {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 0;
+    margin: 0 0 5px 0;
+}
+
+p {
+    font-size: 12px;
+    padding: 0;
+    margin: 0 0 5px 0;
+}
